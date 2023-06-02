@@ -1,0 +1,45 @@
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.upload-container h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.upload-container input[type="file"] {
+  margin-bottom: 10px;
+}
+
+.upload-container button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.upload-container p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.upload-container .animated-text {
+  font-size: 18px;
+  animation: slideIn 1s ease-in-out;
+  color: #4caf50;
+}
