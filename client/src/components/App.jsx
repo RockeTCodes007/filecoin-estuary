@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./App.css"; // Import CSS file for styling
 
-const API_KEY = "ESTb42b4212-2d90-4fe4-b9cd-668c21bde132ARY";
+const API_KEY = <YOUR_ESTUARY_API_KEY>;
 
 function App() {
   const [file, setFile] = useState(null);
