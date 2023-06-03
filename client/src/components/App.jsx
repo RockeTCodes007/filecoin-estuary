@@ -25,7 +25,7 @@ function App() {
     setStatus("Please wait uploading...");
 
     axios
-      .post("http://localhost:5000/api", form, {
+      .post("https://vast-wrap-hare.cyclic.app/api", form, {
         headers: {
           Authorization: `Bearer ${API_KEY}`,
           "Content-Type": "multipart/form-data",
