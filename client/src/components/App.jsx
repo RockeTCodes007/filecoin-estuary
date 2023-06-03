@@ -25,7 +25,7 @@ function App() {
     setStatus("Please wait uploading...");
 
     axios
-      .post("http://40.79.240.144:6000/api", form, {
+      .post("http://localhost:5000/api", form, {
         headers: {
           Authorization: `Bearer ${API_KEY}`,
           "Content-Type": "multipart/form-data",
