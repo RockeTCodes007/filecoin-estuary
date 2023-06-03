@@ -7,6 +7,7 @@ const API_KEY = "ESTb42b4212-2d90-4fe4-b9cd-668c21bde132ARY";
 function App() {
   const [file, setFile] = useState(null);
   const [status, setStatus] = useState("");
+  const [uploadedData, setUploadedData] = useState(null);
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
@@ -21,7 +22,7 @@ function App() {
     const form = new FormData();
     form.append("data", file);
 
-    setStatus("Uploading...");
+    setStatus("Please wait uploading...");
 
     axios
       .post("http://localhost:5000/api", form, {
@@ -32,6 +33,7 @@ function App() {
       })
       .then(function (response) {
         setStatus("File uploaded successfully.");
+        setUploadedData(response.data); // Set the uploaded data
       })
       .catch(function (error) {
         setStatus("Error uploading file.");
@@ -44,6 +46,21 @@ function App() {
       <input type="file" onChange={handleFileChange} />
       <button onClick={handleUpload}>Upload</button>
       <p>{status}</p>
+      {uploadedData && (
+        <div>
+          <p>
+            Click{" "}
+            <a
+              href={uploadedData.estuary_retrieval_url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              here
+            </a>{" "}
+            to view the file.
+          </p>
+        </div>
+      )}
       <h2 className="animated-text">Welcome to the Filecoin Uploader!</h2>
     </div>
   );
