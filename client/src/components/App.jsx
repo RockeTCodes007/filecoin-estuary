@@ -36,7 +36,7 @@ function App() {
         setUploadedData(response.data); // Set the uploaded data
       })
       .catch(function (error) {
-        setStatus("Error uploading file.");
+        setStatus("Error uploading file.Please try again later.");
       });
   };
 
